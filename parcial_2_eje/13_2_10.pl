@@ -22,3 +22,5 @@ repetir(X, N, [X|L]) :-
     N > 0, 
     N1 is N - 1,        % Reducir N en 1.
     repetir(X, N1, L).  % Repetir el elemento X N1 veces más.
+
+%repetir_elementos([1, 2, 3], 3, R).
