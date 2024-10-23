@@ -17,3 +17,15 @@ sin_repetidos_consecutivos([X,Y|T], [X|R]) :-
 %sin_repetidos_consecutivos([1, 1, 2, 3, 3, 3, 4, 4, 5], R).
 
 
+agrupar_repetidos_consecutivos([], []). % Caso base: una lista vacía se transforma en una lista vacía.
+
+agrupar_repetidos_consecutivos([X], [[X]]). % Una lista con un solo elemento se convierte en una sublista con ese elemento.
+
+agrupar_repetidos_consecutivos([X, X | T], [[X|R1]|R]) :- 
+    agrupar_repetidos_consecutivos([X | T], [R1|R]). % Si los primeros dos elementos son iguales, se agrupan en la misma sublista.
+
+agrupar_repetidos_consecutivos([X, Y | T], [[X] | R]) :- 
+    X \= Y, % Si los primeros dos elementos son diferentes, se comienza una nueva sublista.
+    agrupar_repetidos_consecutivos([Y | T], R). % Continuar agrupando el resto de la lista.
+
+%agrupar_repetidos_consecutivos([1, 1, 2, 3, 3, 3, 4, 4, 5], R).
