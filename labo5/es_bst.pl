@@ -25,3 +25,5 @@ todos_mayores([Valor, SubArbolIzquierdo, SubArbolDerecho], Limite) :-
   >(Valor, Limite),
   todos_mayores(SubArbolIzquierdo, Limite),
   todos_mayores(SubArbolDerecho, Limite).
+%ejemplo
+%es_bst([5, [3, [2, [], []], [4, [], []]], [7, [6, [], []], [8, [], []]]]).
